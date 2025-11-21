@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Management System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>💪 GymPro</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('facilities')" class="nav-link active">🏢 Facilities</a></li>
+                <li><a href="#" onclick="showSection('members')" class="nav-link">👥 Members</a></li>
+                <li><a href="#" onclick="showSection('trainers')" class="nav-link">🏋️ Trainers</a></li>
+                <li><a href="#" onclick="showSection('equipment')" class="nav-link">⚙️ Equipment</a></li>
+                <li><a href="#" onclick="showSection('schedules')" class="nav-link">📅 Schedules</a></li>
+                <li><a href="#" onclick="showSection('staff')" class="nav-link">👔 Staff</a></li>
+                <li><a href="#" onclick="showSection('fees')" class="nav-link">💳 Fees</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Gym Management System</h1>
+                <div class="header-right">
+                    <span class="user-info">Administrator</span>
+                </div>
+            </header>
+
+            <!-- Facilities Section -->
+            <section id="facilities" class="content-section active">
+                <div class="section-header">
+                    <h2>Gym Facilities</h2>
+                    <button class="btn btn-primary" onclick="openFacilityModal()">+ Add Facility</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="facilities-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Members Section -->
+            <section id="members" class="content-section">
+                <div class="section-header">
+                    <h2>Members</h2>
+                    <button class="btn btn-primary" onclick="openMemberModal()">+ Add Member</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Gym</th>
+                                <th>Trainer</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="members-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Trainers Section -->
+            <section id="trainers" class="content-section">
+                <div class="section-header">
+                    <h2>Trainers</h2>
+                    <button class="btn btn-primary" onclick="openTrainerModal()">+ Add Trainer</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px;"></th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Gym</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trainers-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Equipment Section -->
+            <section id="equipment" class="content-section">
+                <div class="section-header">
+                    <h2>Equipment</h2>
+                    <button class="btn btn-primary" onclick="openEquipmentModal()">+ Add Equipment</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Muscle Type</th>
+                                <th>Gym</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="equipment-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Schedules Section -->
+            <section id="schedules" class="content-section">
+                <div class="section-header">
+                    <h2>Training Schedules</h2>
+                    <button class="btn btn-primary" onclick="openScheduleModal()">+ Add Schedule</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Duration (min)</th>
+                                <th>Details</th>
+                                <th>Trainer</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schedules-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Staff Section -->
+            <section id="staff" class="content-section">
+                <div class="section-header">
+                    <h2>Staff</h2>
+                    <button class="btn btn-primary" onclick="openStaffModal()">+ Add Staff</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Contact</th>
+                                <th>Gym</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="staff-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Fees Section -->
+            <section id="fees" class="content-section">
+                <div class="section-header">
+                    <h2>Fees</h2>
+                    <button class="btn btn-primary" onclick="openFeeModal()">+ Add Fee</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Session</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fees-table">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Generic Modal for CRUD Operations -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Add Item</h2>
+            <form id="modal-form" onsubmit="handleFormSubmit(event)">
+                <div id="modal-fields"></div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
